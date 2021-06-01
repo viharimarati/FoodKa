@@ -1,0 +1,29 @@
+<div style="background-color: #87ceeb; height: 20cm; width:43cm; margin-left: -8cm;">
+<div>
+<table class="table table-hover"  style="background-color: skyblue;">
+  <thead class="thead-light" >
+    <th>#Order No.</th>
+    <th>CustomerName</th>
+    <th>Payment_Method</th>
+    <th>GrandTotal</th>
+    <th>
+      <a class="btn btn-outline-success" routerLink="/order"><i class="fa fa-plus-square"></i> Create New</a>
+    </th>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let item of orderList" style="background-color: hsl(128, 82%, 62%);font-size: 0.5cm;">
+      <th (click)="openForEdit(item.orderId)">{{item.orderNo}}</th>
+      <td (click)="openForEdit(item.orderId)">{{item.customer.name}}</td>
+      <td (click)="openForEdit(item.orderId)">{{item.pmethod}}</td>
+      <td (click)="openForEdit(item.orderId)">{{item.gtotal}}</td>
+      <td>
+          <a class="btn text-danger" (click)="onOrderDelete(item.orderId)"><i class="fa fa-trash fa-lg"></i></a>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+</div>
+</div>
+
